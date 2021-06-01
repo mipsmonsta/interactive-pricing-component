@@ -1,3 +1,91 @@
+:root {
+  --full-slider-bar: hsl(174, 77%, 80%);
+  --slider-background: hsl(174, 86%, 45%);
+  --slider-glow: hsla(174, 86%, 45%, 20%);
+
+}
+
+
+/*********Override Default Slider Style************************/
+
+input[name="range-input"]{
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
+}
+
+input[name="range-input"]::-webkit-slider-runnable-track{
+  -webkit-appearance: none;
+
+}
+
+input[name="range-input"]:focus {
+
+  outline: none;
+
+}
+
+input[name="range-input"]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent; 
+  border-color: transparent;
+  color: transparent;
+}
+
+/*********Styling the thumb************************/
+
+/* Special styling for WebKit/Blink */
+input[name="range-input"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-image: url(../images/icon-slider.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: var(--slider-background);
+  cursor: pointer;
+  margin-top: -5px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  box-shadow: 0 5px 3px 10px var(--slider-glow);
+}
+
+/* All the same stuff for Firefox */
+input[name="range-input"]::-moz-range-thumb {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-image: url(../images/icon-slider.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: var(--slider-background);
+  cursor: pointer;
+  box-shadow: 0 5px 3px 10px var(--slider-glow);
+}
+
+/* All the same stuff for IE */
+input[name="range-input"]::-ms-thumb {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-image: url(../images/icon-slider.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: var(--slider-background);
+  cursor: pointer;
+}
+
+/**********Styling the track*************************/
+
+input[name="range-input"] { /*check main.js for the dynamic code to style right side of track based on value*/
+  width: 100%;
+  height: 7px;
+  cursor: pointer;
+  background: linear-gradient(to right, hsl(174, 77%, 80%) 50%,  hsl(224, 65%, 95%) 50%, hsl(224, 65%, 95%));
+  border-radius: 3px;
+  transition: background 450ms ease-in;
+}
+
 
 
 

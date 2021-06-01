@@ -26,14 +26,29 @@
 
     <main class="container">
       <section class="top">
-        <div><span class="page-view">100K</span>Pageviews</div>
-        <div>$ <span class="amount">16.00</span>/month</div>
+        <div><span id="page-view">100K</span> Pageviews</div>
+        <div><span id="amount">16.00</span>/month</div>
       </section>
+
+      <div class="range-wrap">
+        <input
+          type="range"
+          name="range-input"
+          id="range-pageview"
+          min="1"
+          max="5"
+          step="1"
+          value="3"
+        />
+      </div>
+
       <section class="mid">
         <div class="radio">
           <p>Monthly Billing</p>
         </div>
-        <div class="yearly">Yearly Billing <span class="discount">25% discount</span></div>
+        <div class="yearly">
+          Yearly Billing <span class="discount">25% discount</span>
+        </div>
       </section>
       <section class="bottom">
         <ul class="features">
@@ -41,8 +56,8 @@
           <li>100% data ownership</li>
           <li>Email reports</li>
         </ul>
-        <div class="button-trial">Start my trial</div>  
-      </section>        
+        <div class="button-trial">Start my trial</div>
+      </section>
     </main>
 
     <div class="attribution">
@@ -51,5 +66,7 @@
         >Frontend Mentor</a
       >. Coded by <a href="#">Yaojin Tham</a>.
     </div>
+
+    <script src="main.js"></script>
   </body>
 </html>
