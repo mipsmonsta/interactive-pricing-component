@@ -19,46 +19,52 @@
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   </head>
   <body>
-    <header>
-      <h2>Simple, traffic-based pricing</h2>
-      <p>Sign-up for our 30-day trial. No credit card required.</p>
-    </header>
-
-    <main class="container">
-      <section class="top">
-        <div><span id="page-view">100K</span> Pageviews</div>
-        <div><span id="amount">16.00</span>/month</div>
-      </section>
-
-      <div class="range-wrap">
-        <input
-          type="range"
-          name="range-input"
-          id="range-pageview"
-          min="1"
-          max="5"
-          step="1"
-          value="3"
-        />
+    <div class="content">
+      <div class="header">
+        <h2 class="cta">Simple, traffic-based pricing</h2>
+        <p>Sign-up for our 30-day trial. No credit card required.</p>
       </div>
-
-      <section class="mid">
-        <div class="radio">
-          <p>Monthly Billing</p>
+      <main class="container">
+        <section class="top">
+          <div class="pageview">
+            <span id="page-view">100K</span
+            ><span id="textpageviews"> Pageviews</span>
+          </div>
+          <div><span id="amount" class="cta">$16.00</span> /month</div>
+        </section>
+        <div class="range-wrap">
+          <input
+            type="range"
+            name="range-input"
+            id="range-pageview"
+            min="1"
+            max="5"
+            step="1"
+            value="3"
+          />
         </div>
-        <div class="yearly">
-          Yearly Billing <span class="discount">25% discount</span>
-        </div>
-      </section>
-      <section class="bottom">
-        <ul class="features">
-          <li>Unlimited websites</li>
-          <li>100% data ownership</li>
-          <li>Email reports</li>
-        </ul>
-        <div class="button-trial">Start my trial</div>
-      </section>
-    </main>
+        <section class="mid">
+          <div class="radio">
+            <p>Monthly Billing</p>
+          </div>
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider round"></span>
+          </label>
+          <div class="yearly">
+            Yearly Billing <span class="discount">25% discount</span>
+          </div>
+        </section>
+        <section class="bottom">
+          <ul class="features">
+            <li>Unlimited websites</li>
+            <li>100% data ownership</li>
+            <li>Email reports</li>
+          </ul>
+          <div class="button-trial">Start my trial</div>
+        </section>
+      </main>
+    </div>
 
     <div class="attribution">
       Challenge by
