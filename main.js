@@ -23,3 +23,13 @@ document.getElementById("range-pageview").oninput = function () {
   document.getElementById("page-view").textContent = priceMap[this.value][0];
   document.getElementById("amount").textContent = priceMap[this.value][1];
 };
+
+let switchElement = document.querySelector(".discount-switch");
+switchElement.addEventListener("change", () => {
+  let discountElement = document.querySelector(".discount");
+  if (switchElement.checked) {
+    discountElement.style.visibility = "visible";
+  } else {
+    discountElement.style.visibility = "hidden";
+  }
+});
