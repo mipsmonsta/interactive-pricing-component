@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap");
 
 :root {
   --full-slider-bar: hsl(174, 77%, 80%);
@@ -18,10 +18,14 @@
   box-sizing: border-box;
 }
 
+body {
+  overflow: hidden;
+}
+
 .content {
   height: 100vh;
   width: 100vw;
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: 15px;
   background-image: url(../images/bg-pattern.svg);
   display: grid;
@@ -34,14 +38,13 @@
 }
 
 .header {
-  font-size: 1.2rem;
   line-height: 2;
   grid-column: 1 / -1;
   grid-row: 2 / 3;
   margin: 0 auto;
   text-align: center;
   background-image: url(../images/pattern-circles.svg);
-  background-position:top;
+  background-position: top;
   background-repeat: no-repeat;
 }
 
@@ -54,14 +57,13 @@
   color: var(--subtle-text);
   grid-column: 1 / -1;
   grid-row: 3 / -1;
-  min-width: 600px;
+  width: 600px;
   height: min-content;
   margin: 0 auto;
   padding: 2%;
   border-radius: 10px 10px;
-  
-  background: var(--pricing-component-bg);;
 
+  background: var(--pricing-component-bg);
 }
 
 .container > * {
@@ -84,32 +86,60 @@
 #amount {
   font-size: 2rem;
   font-weight: 800;
-  vertical-align:middle;
+  vertical-align: middle;
+}
+
+/**********section mid**************************************/
+.mid {
+  padding-right: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+span.discount-long {
+  padding-inline: 1rem;
+  border-radius: 1rem;
+  margin-left: 1rem;
+  font-weight: 800;
+  color: var(--discount-text);
+  background-color: var(--discount-bg);
+}
+
+span.discount-short {
+  display: none;
+  padding-inline: 1rem;
+  border-radius: 1rem;
+  font-weight: 800;
+  color: var(--discount-text);
+  background-color: var(--discount-bg);
 }
 
 /**********toggle switch***************************************/
-.switch { /*create box around the slider */
+.switch {
+  /*create box around the slider */
   position: relative;
   display: inline-block;
   width: 36px;
   height: 20px;
   margin-inline: 1rem;
-
 }
 
-.switch input { /*hide default checkbox*/
+.switch input {
+  /*hide default checkbox*/
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-.slider { /*create slider*/
+.slider {
+  /*create slider*/
   position: absolute;
   cursor: pointer;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: var(--toggle-bg);
   transition: 0.4s;
 }
@@ -145,22 +175,7 @@ input:checked + .slider:before {
   transform: translateX(16px);
 }
 
-/**********section mid**************************************/
-.mid {
-  padding-right: 1rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end; 
-}
 
-span.discount {
-  padding-inline: 1rem;
-  border-radius: 1rem;
-  margin-left: 1rem;
-  font-weight: 800;
-  color: var(--discount-text);
-  background-color: var(--discount-bg);
-}
 
 /**********section bottom**************************************/
 .bottom {
@@ -197,25 +212,23 @@ span.discount {
 
 /*********Override Default Slider Style************************/
 
-input[name="range-input"]{
+input[name="range-input"] {
   -webkit-appearance: none;
   background: transparent;
 }
 
-input[name="range-input"]::-webkit-slider-runnable-track{
+input[name="range-input"]::-webkit-slider-runnable-track {
   -webkit-appearance: none;
-
 }
 
 input[name="range-input"]:focus {
   outline: none;
-
 }
 
 input[name="range-input"]::-ms-track {
   width: 100%;
   cursor: pointer;
-  background: transparent; 
+  background: transparent;
   border-color: transparent;
   color: transparent;
 }
@@ -264,17 +277,67 @@ input[name="range-input"]::-ms-thumb {
 
 /**********Styling the track*************************/
 
-input[name="range-input"] { /*check main.js for the dynamic code to style right side of track based on value*/
+input[name="range-input"] {
+  /*check main.js for the dynamic code to style right side of track based on value*/
   width: 100%;
   height: 7px;
   cursor: pointer;
-  background: linear-gradient(to right, hsl(174, 77%, 80%) 50%,  hsl(224, 65%, 95%) 50%, hsl(224, 65%, 95%));
+  background: linear-gradient(
+    to right,
+    hsl(174, 77%, 80%) 50%,
+    hsl(224, 65%, 95%) 50%,
+    hsl(224, 65%, 95%)
+  );
   border-radius: 3px;
   transition: background 450ms ease-in;
 }
 
+@media (max-width: 600px) {
+
+  * {
+    font-size: 13px;
+  }
+
+  .header > h1 {
+    font-size: 2rem;
+  }
+
+  .container {
+    width: 350px;
+  }
+
+  span.discount-long {
+    display: none;
+  }
+
+  span.discount-short {
+    display: inline-block;
+  }
 
 
+  .switch {
+    margin-inline: 0;
+  }
+
+  .mid {
+  padding: 0;
+  text-align: center;
+  justify-content: space-evenly;
+  }
+
+  .bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .button-trial {
+    background-color: var(--cta-bg);
+    margin-top: 2rem;
+    border-radius: 1.2rem;
+  }
+}
 
 .attribution {
   font-size: 11px;
