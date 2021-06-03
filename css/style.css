@@ -72,11 +72,29 @@ body {
 }
 
 .top {
-  display: flex;
+  /* display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; */
+  display: grid;
   font-weight: 600;
+  grid-template-areas:
+    "a b"
+    "c c";
+}
+
+.pageview {
+  grid-area: a;
+  margin: auto 0;
+}
+
+.amount-month {
+  grid-area: b;
+  justify-self: end;
+}
+
+.range-wrap {
+  grid-area: c;
 }
 
 #textpageviews {
@@ -174,8 +192,6 @@ input:focus + .slider {
 input:checked + .slider:before {
   transform: translateX(16px);
 }
-
-
 
 /**********section bottom**************************************/
 .bottom {
@@ -293,7 +309,6 @@ input[name="range-input"] {
 }
 
 @media (max-width: 600px) {
-
   * {
     font-size: 13px;
   }
@@ -306,6 +321,35 @@ input[name="range-input"] {
     width: 350px;
   }
 
+  .top {
+    /* display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; */
+    display: grid;
+    font-weight: 600;
+    grid-template-areas:
+      "a"
+      "b"
+      "c";
+  }
+
+  .pageview {
+    justify-self: center;
+    grid-area: a;
+  }
+
+  .amount-month {
+    grid-area: c;
+    justify-self: center;
+    margin-top: 1.5rem;
+  }
+
+  .range-wrap {
+    grid-area: b;
+    margin-top: 1.5rem;
+  }
+
   span.discount-long {
     display: none;
   }
@@ -314,15 +358,14 @@ input[name="range-input"] {
     display: inline-block;
   }
 
-
   .switch {
     margin-inline: 0;
   }
 
   .mid {
-  padding: 0;
-  text-align: center;
-  justify-content: space-evenly;
+    padding: 0;
+    text-align: center;
+    justify-content: space-evenly;
   }
 
   .bottom {

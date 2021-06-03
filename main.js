@@ -25,8 +25,11 @@ document.getElementById("range-pageview").oninput = function () {
 };
 
 let switchElement = document.querySelector(".discount-switch");
+let discountElement = document.querySelector(".discount");
+discountElement.style.visibility = "hidden"; //hide by default when script first runs
+
 switchElement.addEventListener("change", () => {
-  let discountElement = document.querySelector(".discount");
+  // console.log(switchElement.checked);
   if (switchElement.checked) {
     discountElement.style.visibility = "visible";
   } else {

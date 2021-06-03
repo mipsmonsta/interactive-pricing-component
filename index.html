@@ -30,31 +30,31 @@
             <span id="page-view">100K</span
             ><span id="textpageviews"> Pageviews</span>
           </div>
-          <div><span id="amount" class="cta">$16.00</span> /month</div>
+          <div class="amount-month"><span id="amount" class="cta">$16.00</span> /month</div>
+          <div class="range-wrap">
+            <input
+              type="range"
+              name="range-input"
+              id="range-pageview"
+              min="1"
+              max="5"
+              step="1"
+              value="3"
+            />
+          </div>
         </section>
-        <div class="range-wrap">
-          <input
-            type="range"
-            name="range-input"
-            id="range-pageview"
-            min="1"
-            max="5"
-            step="1"
-            value="3"
-          />
-        </div>
+
         <section class="mid">
           <div class="radio">
             <p>Monthly Billing</p>
           </div>
           <label class="switch">
-            <input type="checkbox" class="discount-switch"/>
+            <input type="checkbox" class="discount-switch" />
             <span class="slider round"></span>
           </label>
-          <div class="yearly">
-            Yearly Billing 
-          </div>
-          <span class="discount-long">25% discount</span><span class="discount-short">25%</span>
+          <div class="yearly">Yearly Billing</div>
+          <span class="discount-long discount">25% discount</span
+          ><span class="discount-short discount">25%</span>
         </section>
         <section class="bottom">
           <ul class="features">
