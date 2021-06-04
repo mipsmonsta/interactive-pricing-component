@@ -386,6 +386,7 @@ input[name="range-input"] {
 }
 
 .attribution {
+  padding-top: 3rem;
   font-size: 11px;
   text-align: center;
 }
